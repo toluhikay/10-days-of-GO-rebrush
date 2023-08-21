@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<form action="" method="POST">
+		<br /><br />
+			<input type="text" name="username" /><br /><br />
+			<input type="text" name="firstname" /><br /><br />
+			<input type="text" name="lastname" /><br /><br />
+			<input type="submit" name="Submit" /><br /><br />
+		</form>
+		{{if .FirstName}}
+		<h1>user name : {{.UserName}}</h1>
+		<h1>first name : {{.FirstName}}</h1>
+		<h1>first name : {{.LastName}}</h1>
+		{{end}}
+	</body>
+</html>

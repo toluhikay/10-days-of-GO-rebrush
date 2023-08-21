@@ -30,5 +30,10 @@ func getUUIDSession(w http.ResponseWriter, req *http.Request) {
 	fmt.Fprint(w, cookie.Name, ":", cookie.Value)
 }
 func homePage(w http.ResponseWriter, req *http.Request) {
-	fmt.Fprint(w, "Welcome to the home page for generating UUID")
+	cookie, err := req.Cookie("session")
+	if err != nil {
+		http.Redirect(w, req, "/get-uuid", http.StatusSeeOther)
+	}
+
+	fmt.Fprint(w, "Welcome to the home page for generating UUID", cookie)
 }
